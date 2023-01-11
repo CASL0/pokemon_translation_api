@@ -54,3 +54,15 @@ databaseChangeLog:
                   constraints:
                     nullable: false
                   remarks: 中国語（繁）
+  - changeSet:
+      id: 2
+      author: root
+      changes:
+        - loadData:
+            tableName: pokemon_translation
+            commentLineStartsWith: --
+            encoding: UTF-8
+            file: pokemon_translation.csv
+            relativeToChangelogFile: true
+            separator: ','
+            usePreparedStatements: true
