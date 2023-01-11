@@ -1,0 +1,56 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: root
+      changes:
+        - createTable:
+            tableName: pokemon_translation
+            remarks: ポケモン翻訳マスター
+            columns:
+              - column:
+                  name: id
+                  type: varchar(10)
+                  remarks: 番号
+              - column:
+                  name: jpn
+                  type: varchar(10)
+                  constraints:
+                    nullable: false
+                  remarks: 日本語
+              - column:
+                  name: eng
+                  type: varchar(100)
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+                  remarks: 英語
+              - column:
+                  name: deu
+                  type: varchar(20)
+                  constraints:
+                    nullable: false
+                  remarks: ドイツ語
+              - column:
+                  name: fra
+                  type: varchar(20)
+                  constraints:
+                    nullable: false
+                  remarks: フランス語
+              - column:
+                  name: kor
+                  type: varchar(10)
+                  constraints:
+                    nullable: false
+                  remarks: 韓国語
+              - column:
+                  name: chs
+                  type: varchar(10)
+                  constraints:
+                    nullable: false
+                  remarks: 中国語（簡）
+              - column:
+                  name: cht
+                  type: varchar(10)
+                  constraints:
+                    nullable: false
+                  remarks: 中国語（繁）
