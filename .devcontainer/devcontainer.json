@@ -1,0 +1,32 @@
+{
+  "name": "Java",
+  "dockerComposeFile": [
+    "./docker-compose.yml"
+  ],
+  "service": "web",
+  "workspaceFolder": "/app",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "vscjava.vscode-java-pack",
+        "Pivotal.vscode-boot-dev-pack",
+        "vscjava.vscode-spring-initializr",
+        "Pivotal.vscode-spring-boot",
+        "vscjava.vscode-spring-boot-dashboard",
+        "voidrot.liquibase"
+      ],
+      "settings": {
+        "editor.tabSize": 2,
+        "editor.formatOnPaste": true,
+        "editor.formatOnSave": true,
+        "editor.formatOnType": true,
+        "files.eol": "\n",
+        "files.insertFinalNewline": true,
+        "files.trimFinalNewlines": true,
+        "files.trimTrailingWhitespace": true,
+        "java.format.settings.url": "https://raw.githubusercontent.com/google/styleguide/gh-pages/eclipse-java-google-style.xml",
+        "java.format.settings.profile": "GoogleStyle"
+      }
+    }
+  }
+}
