@@ -4,7 +4,6 @@ import java.util.List;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.ErrorResponseException;
-import io.github.casl0.pokemon.dto.translations.TranslationAllResponse;
 import io.github.casl0.pokemon.dto.translations.TranslationResponse;
 import io.github.casl0.pokemon.repository.TranslationRepository;
 import jakarta.annotation.Nonnull;
@@ -24,10 +23,8 @@ public class TranslationService {
    *
    * @return 翻訳情報のリスト
    */
-  public TranslationAllResponse findAll() {
-    final List<TranslationResponse> res =
-        translationRepository.findAll().stream().map(TranslationResponse::of).toList();
-    return new TranslationAllResponse(res);
+  public List<TranslationResponse> findAll() {
+    return translationRepository.findAll().stream().map(TranslationResponse::of).toList();
   }
 
   /**

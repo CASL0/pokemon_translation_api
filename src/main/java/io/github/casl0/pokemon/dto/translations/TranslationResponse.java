@@ -1,5 +1,6 @@
 package io.github.casl0.pokemon.dto.translations;
 
+import com.fasterxml.jackson.annotation.JsonFilter;
 import io.github.casl0.pokemon.entity.Translation;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -9,6 +10,7 @@ import lombok.Data;
  */
 @Data
 @AllArgsConstructor
+@JsonFilter("TranslationResponseFilter")
 public class TranslationResponse {
   /**
    * 番号
@@ -52,19 +54,13 @@ public class TranslationResponse {
 
   /**
    * EntityからDTOへ変換します
+   *
    * @param translation translationのEntity
    * @return translationのDTO
    */
   public static TranslationResponse of(Translation translation) {
-    return new TranslationResponse(
-      translation.getId(),
-      translation.getJpn(),
-      translation.getEng(),
-      translation.getDeu(),
-      translation.getFra(),
-      translation.getKor(),
-      translation.getChs(),
-      translation.getCht()
-    );
+    return new TranslationResponse(translation.getId(), translation.getJpn(), translation.getEng(),
+        translation.getDeu(), translation.getFra(), translation.getKor(), translation.getChs(),
+        translation.getCht());
   }
 }
