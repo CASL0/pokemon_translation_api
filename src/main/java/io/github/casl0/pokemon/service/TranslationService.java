@@ -35,10 +35,8 @@ public class TranslationService {
    * @throws ErrorResponseException 検索で見つからなかった場合に400エラーの例外をThrowします
    */
   public TranslationResponse findByName(String name) throws ErrorResponseException {
-    try {
-      return TranslationResponse.of(translationRepository.findByName(name));
-    } catch (Throwable e) {
-      throw new ErrorResponseException(HttpStatus.BAD_REQUEST);
-    }
+    final var translationEntity = translationRepository.findByName(name)
+        .orElseThrow(() -> new ErrorResponseException(HttpStatus.BAD_REQUEST));
+    return TranslationResponse.of(translationEntity);
   }
 }

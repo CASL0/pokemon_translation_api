@@ -1,5 +1,6 @@
 package io.github.casl0.pokemon.repository;
 
+import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -15,5 +16,5 @@ public interface TranslationRepository extends JpaRepository<Translation, String
       value = "SELECT * FROM pokemon_translation WHERE jpn = :name OR eng = :name OR "
           + "deu = :name OR fra = :name OR kor = :name OR chs = :name OR cht = :name",
       nativeQuery = true)
-  public Translation findByName(@Param("name") String name);
+  public Optional<Translation> findByName(@Param("name") String name);
 }
