@@ -6,7 +6,7 @@ x-db-password: &DATABASE_PASSWORD root
 
 services:
   web:
-    image: amazoncorretto:17
+    image: mcr.microsoft.com/devcontainers/java:0-17
     tty: true
     working_dir: /app
     environment:
