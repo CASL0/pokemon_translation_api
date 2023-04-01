@@ -1,8 +1,6 @@
 {
   "name": "Java",
-  "dockerComposeFile": [
-    "./docker-compose.yml"
-  ],
+  "dockerComposeFile": ["./docker-compose.yml"],
   "service": "web",
   "workspaceFolder": "/app",
   "customizations": {
@@ -13,7 +11,8 @@
         "vscjava.vscode-spring-initializr",
         "Pivotal.vscode-spring-boot",
         "vscjava.vscode-spring-boot-dashboard",
-        "voidrot.liquibase"
+        "voidrot.liquibase",
+        "vscjava.vscode-gradle"
       ],
       "settings": {
         "editor.tabSize": 2,
